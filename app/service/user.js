@@ -3,7 +3,7 @@
 
 const Service = require('egg').Service;
 
-class HomeService extends Service {  
+class HomeService extends Service {
 
   async user() {
     const { app } = this;

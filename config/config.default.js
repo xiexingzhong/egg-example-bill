@@ -48,6 +48,12 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
 
+  config.security = { // csrf攻击防范  开启true 关闭false ,测试时暂时关闭，不然影响POST 请求（在没有token 鉴权的情况下）。
+    csrf: {
+      enable: false,
+    },
+  };
+
   return {
     ...config,
     ...userConfig,

@@ -2,7 +2,7 @@
 
 const Controller = require('egg').Controller;
 
-class HomeController extends Controller {    
+class HomeController extends Controller {
   // 获取用户信息
   async user() {
     const { ctx } = this;
@@ -26,17 +26,18 @@ class HomeController extends Controller {
     const { name } = ctx.request.body;
     try {
       const result = await ctx.service.user.addUser(name);
+      console.log(this.service.user(name), 'this.service.user(name)');
       ctx.body = {
         code: 200,
         msg: '添加成功',
         data: result,
-      }
+      };
     } catch (error) {
       ctx.body = {
         code: 500,
         msg: '添加失败',
         data: null,
-      }
+      };
     }
   }
   // 删除
